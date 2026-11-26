@@ -6,14 +6,23 @@ import asar from '@electron/asar';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+/** Resolve app.asar path across macOS, Windows (user & system installs), and Linux. */
 function resolveDefaultAsarPath() {
   if (process.env.AGY_ASAR_PATH) return process.env.AGY_ASAR_PATH;
+
   if (process.platform === 'darwin') {
     return '/Applications/Antigravity.app/Contents/Resources/app.asar';
   }
+
   if (process.platform === 'win32') {
-    return path.join(process.env.LOCALAPPDATA || '', 'Programs', 'Antigravity', 'resources', 'app.asar');
+    const candidates = [
+      path.join(process.env.LOCALAPPDATA || '', 'Programs', 'Antigravity', 'resources', 'app.asar'),
+      path.join(process.env.ProgramFiles || 'C:\\Program Files', 'Antigravity', 'resources', 'app.asar'),
+      path.join(process.env['ProgramFiles(x86)'] || 'C:\\Program Files (x86)', 'Antigravity', 'resources', 'app.asar'),
+    ];
+    return candidates.find((p) => fs.existsSync(p)) || candidates[0];
   }
+
   return '/opt/google-antigravity/resources/app.asar';
 }
 
@@ -349,36 +358,35 @@ async function run() {
   const mode = process.argv[2] || 'apply';
 
   if (!fs.existsSync(ASAR_PATH)) {
-    console.error(`Khong tim thay ${ASAR_PATH}`);
-    console.error('Ban co the chi dinh duong dan qua bien moi truong AGY_ASAR_PATH.');
+    console.error(`Could not find app.asar at: ${ASAR_PATH}`);
+    console.error('Set AGY_ASAR_PATH to specify a custom location.');
     process.exit(1);
   }
 
   if (mode === 'revert') {
     if (!fs.existsSync(BACKUP_PATH)) {
-      console.error(`Khong tim thay file backup: ${BACKUP_PATH}`);
+      console.error(`Backup file not found: ${BACKUP_PATH}`);
       process.exit(1);
     }
     fs.copyFileSync(BACKUP_PATH, ASAR_PATH);
-    console.log('Da khoi phuc app.asar tu app.asar.font-backup thanh cong.');
+    console.log('Successfully restored app.asar from app.asar.font-backup.');
     return;
   }
 
-  // Sync repo CSS to ~/.antigravity-custom-font.css if not present yet
   if (!fs.existsSync(HOME_CSS_PATH) && fs.existsSync(REPO_CSS_PATH)) {
     fs.copyFileSync(REPO_CSS_PATH, HOME_CSS_PATH);
-    console.log(`Da copy file CSS mac dinh toi ${HOME_CSS_PATH}`);
+    console.log(`Created default CSS config at: ${HOME_CSS_PATH}`);
   }
 
   const cssSource = fs.existsSync(HOME_CSS_PATH) ? HOME_CSS_PATH : REPO_CSS_PATH;
   if (!fs.existsSync(cssSource)) {
-    console.error('Khong tim thay file CSS cau hinh.');
+    console.error('CSS configuration file not found.');
     process.exit(1);
   }
 
   if (!fs.existsSync(BACKUP_PATH)) {
     fs.copyFileSync(ASAR_PATH, BACKUP_PATH);
-    console.log(`Da tao backup tai: ${BACKUP_PATH}`);
+    console.log(`Created backup at: ${BACKUP_PATH}`);
   }
 
   const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'agy-asar-'));
@@ -386,7 +394,7 @@ async function run() {
     asar.extractAll(ASAR_PATH, tmpDir);
     const preloadPath = path.join(tmpDir, 'dist', 'preload.js');
     if (!fs.existsSync(preloadPath)) {
-      throw new Error('Khong tim thay dist/preload.js trong app.asar');
+      throw new Error('dist/preload.js not found inside app.asar');
     }
 
     const cssText = fs.readFileSync(cssSource, 'utf8');
@@ -399,13 +407,18 @@ async function run() {
     const tmpAsar = `${ASAR_PATH}.tmp`;
     await asar.createPackage(tmpDir, tmpAsar);
     fs.renameSync(tmpAsar, ASAR_PATH);
-    console.log('Da patch font + smooth cursor animation vao Antigravity thanh cong!');
+    console.log('Successfully patched font & smooth cursor animation into Antigravity!');
+  } catch (err) {
+    if (err && (err.code === 'EBUSY' || err.code === 'EPERM' || err.code === 'EACCES')) {
+      console.error('Permission denied or file is locked. Close Antigravity completely (and run as Administrator on Windows if needed), then try again.');
+    }
+    throw err;
   } finally {
     fs.rmSync(tmpDir, { recursive: true, force: true });
   }
 }
 
 run().catch((err) => {
-  console.error('Loi khi patch:', err);
+  console.error('Patch failed:', err);
   process.exit(1);
 });

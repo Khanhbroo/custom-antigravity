@@ -1,38 +1,51 @@
 # Custom Antigravity 2.0
 
-Bộ tùy biến giao diện cho **Antigravity 2.0** (Desktop App + IDE):
-- **Font:** `JetBrains Mono` (`14px`), tối ưu CSS dùng kế thừa tự nhiên (không dùng `*` selector để tránh lag khi chat dài).
-- **Smooth Caret Animation:** Con trỏ lướt mượt (`translate3d` trên GPU), nhấp nháy kiểu `expand` (`scaleY`), tự lấy màu `caret-color` hiện tại, hỗ trợ paste đoạn dài & scroll.
-- **Tương thích:** Chạy cùng mod nền sao `ascii-wallpapers` và tự động tạo backup `app.asar.font-backup`.
+A lightweight customization pack for **Antigravity 2.0** (Desktop App + IDE):
+- **Typography:** Applies `JetBrains Mono` (`14px`) across the UI using natural CSS inheritance (no universal `*` selector, keeping long chat threads fast).
+- **Smooth Caret Animation:** GPU-accelerated caret gliding (`translate3d`), `expand` blinking (`scaleY`), dynamic `caret-color` matching, and proper handling for long pastes and scrolling.
+- **Safe & Reversible:** Preserves existing mods (e.g. `ascii-wallpapers`) and automatically creates an `app.asar.font-backup` before patching.
 
 ---
 
-## Cài đặt nhanh trên máy mới
+## Quick Start
 
-### Yêu cầu
-- Đã cài font **JetBrains Mono** trên hệ điều hành (`~/Library/Fonts` trên macOS hoặc Fonts trên Windows).
-- Đã cài **Node.js** (v18+).
+### Prerequisites
+- **JetBrains Mono** font installed on your OS (`~/Library/Fonts` on macOS, or Windows Fonts).
+- **Node.js** (v18+).
 
-### Các bước áp dụng cho Antigravity 2.0 App
+### Apply to Antigravity 2.0 App
+> **Important (Windows):** Close Antigravity completely before running `npm run apply` (Windows locks `app.asar` while the app is running). If Antigravity is installed in `Program Files`, run your terminal as **Administrator**.
+
 ```bash
 git clone https://github.com/Khanhbroo/custom-antigravity.git
 cd custom-antigravity
 npm install
 npm run apply
 ```
-Sau khi chạy xong, thoát hẳn Antigravity (`Cmd + Q` trên macOS) rồi mở lại.
 
-> Nếu `app.asar` nằm ở đường dẫn khác mặc định, truyền thêm `AGY_ASAR_PATH=/path/to/app.asar npm run apply`.
+Restart Antigravity (`Cmd + Q` on macOS, or close and reopen on Windows) to apply the changes.
 
-### Gỡ bỏ (Revert về bản trước khi patch)
+If your `app.asar` is in a custom location, set `AGY_ASAR_PATH`:
+```bash
+# macOS / Linux
+AGY_ASAR_PATH="/path/to/app.asar" npm run apply
+
+# Windows (PowerShell)
+$env:AGY_ASAR_PATH="C:\path\to\app.asar"; npm run apply
+```
+
+### Revert Changes
 ```bash
 npm run revert
 ```
 
-### Tùy chỉnh CSS / Font
-- Sửa file `~/.antigravity-custom-font.css` (hoặc `custom-font.css` trong repo nếu chưa có file ở home), sau đó chạy lại `npm run apply` và khởi động lại app.
+### Customize Font & CSS
+Edit `~/.antigravity-custom-font.css` (created automatically from [custom-font.css](./custom-font.css) on first run), then re-run:
+```bash
+npm run apply
+```
 
 ---
 
-## Cấu hình cho Antigravity IDE (`settings.json`)
-File [ide-settings.json](./ide-settings.json) chứa các thiết lập chuẩn cho phần IDE (Editor & Terminal dùng `JetBrains Mono`, `cursorSmoothCaretAnimation: "on"`, `cursorBlinking: "expand"`, `animations.UseCursorColorForCursorAnimation: true`). Anh chỉ cần copy nội dung trong file này dán vào `User/settings.json` của Antigravity IDE trên máy mới.
+## Antigravity IDE Settings (`settings.json`)
+[ide-settings.json](./ide-settings.json) contains the matching IDE configuration (`JetBrains Mono`, `editor.cursorSmoothCaretAnimation: "on"`, `editor.cursorBlinking: "expand"`, `animations.UseCursorColorForCursorAnimation: true`, and smooth scrolling). Copy its contents into your Antigravity IDE `User/settings.json`.
