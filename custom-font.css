@@ -1,0 +1,37 @@
+/* Antigravity 2.0 Custom Font CSS (Optimized - no universal * selector)
+ * Sua file nay roi chay:
+ *   node patch_font.mjs
+ * Sau do khoi dong lai Antigravity.app de ap dung.
+ */
+
+:root {
+  --font-sans: 'JetBrains Mono', Consolas, Menlo, monospace !important;
+  --font-mono: 'JetBrains Mono', Consolas, Menlo, monospace !important;
+}
+
+/* font-family tu dong ke thua xuong cac the con, khong can * selector gay nang DOM */
+html,
+body,
+.agy-shell,
+button,
+input,
+textarea,
+select,
+pre,
+code,
+kbd,
+samp {
+  font-family: 'JetBrains Mono', Consolas, Menlo, monospace !important;
+}
+
+/* Co chu 14px cho noi dung va code */
+body,
+.agy-shell,
+p,
+li,
+pre,
+code,
+textarea,
+input {
+  font-size: 14px !important;
+}
