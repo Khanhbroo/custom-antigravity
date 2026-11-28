@@ -329,8 +329,10 @@ ${START_MARKER}
     document.addEventListener('selectionchange', () => {
       if (isEditable(document.activeElement)) scheduleUpdate(false);
     }, true);
-    document.addEventListener('scroll', () => {
-      if (isEditable(document.activeElement)) scheduleUpdate(false);
+    document.addEventListener('scroll', (e) => {
+      if (activeEl && isEditable(document.activeElement) && (e.target === activeEl || (e.target && e.target.contains && e.target.contains(activeEl)))) {
+        scheduleUpdate(false);
+      }
     }, { capture: true, passive: true });
     window.addEventListener('resize', () => {
       cachedStyleKey = '';

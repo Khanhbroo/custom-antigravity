@@ -471,23 +471,23 @@
         body[data-aw-theme] .agy-shell{position:relative!important;isolation:isolate!important;background:transparent!important;--max-conversation-width:min(60rem,50vw)!important}
         @media(max-width:900px){body[data-aw-theme] .agy-shell{--max-conversation-width:100%!important}}
         body[data-aw-theme] .agy-inset-shell{background:transparent!important;background-color:transparent!important}
-        body[data-aw-theme] .agy-sheet{isolation:isolate;background:transparent!important;background-color:transparent!important;color:${t.fg};text-shadow:0 0 2px ${t.light?t.floor:t.sky},0 0 6px ${t.light?t.floor:t.sky},0 0 12px ${t.light?t.floor:t.sky}}
+        body[data-aw-theme] .agy-sheet{isolation:isolate;background:transparent!important;background-color:transparent!important;color:${t.fg};text-shadow:0 1px 4px ${t.light?t.floor:t.sky}}
         body[data-aw-theme] .bg-sidebar{background:transparent!important;background-color:transparent!important}
         body[data-aw-theme] .bg-sidebar.sticky,body[data-aw-theme] .bg-sidebar [class*="sticky"],body[data-aw-theme] [aria-label="Sidebar"] [class*="sticky"],body[data-aw-theme] [data-aw-sticky="1"]{background-color:color-mix(in srgb,${t.panel} 97%,transparent)!important;z-index:20!important}
-        body[data-aw-theme] .agy-inset-shell > div:first-child > div:first-child,body[data-aw-theme] [aria-label="Sidebar"],body[data-aw-theme] nav.bg-sidebar{background-color:color-mix(in srgb,${t.chrome} 30%,transparent)!important;backdrop-filter:blur(10px)!important;-webkit-backdrop-filter:blur(10px)!important;border-right:1px solid color-mix(in srgb,${t.border} 30%,rgba(255,255,255,0.08))!important}
-        body[data-aw-theme] .agy-shell > .shrink-0{position:relative!important;z-index:30!important;background-color:color-mix(in srgb,${t.chrome} 30%,transparent)!important;backdrop-filter:blur(10px)!important;-webkit-backdrop-filter:blur(10px)!important;border-bottom:0!important}
+        body[data-aw-theme] .agy-inset-shell > div:first-child > div:first-child,body[data-aw-theme] [aria-label="Sidebar"],body[data-aw-theme] nav.bg-sidebar{background-color:color-mix(in srgb,${t.chrome} 36%,transparent)!important;backdrop-filter:blur(6px)!important;-webkit-backdrop-filter:blur(6px)!important;border-right:1px solid color-mix(in srgb,${t.border} 30%,rgba(255,255,255,0.08))!important}
+        body[data-aw-theme] .agy-shell > .shrink-0{position:relative!important;z-index:30!important;background-color:color-mix(in srgb,${t.chrome} 36%,transparent)!important;backdrop-filter:blur(6px)!important;-webkit-backdrop-filter:blur(6px)!important;border-bottom:0!important}
         body[data-aw-theme] .agy-user-bubble{color:var(--foreground);text-shadow:none}
         body[data-aw-theme] .agy-sidebar-row{--row-bg:transparent!important}
         body[data-aw-theme] .agy-sidebar-row:hover:not(.bg-sidebar-secondary){background-color:color-mix(in srgb,${t.fg} 7%,transparent)!important}
-        body[data-aw-theme] .agy-sidebar-row.bg-sidebar-secondary,body[data-aw-theme] .agy-sidebar-row[data-active="true"]{background-color:color-mix(in srgb,${t.accent} 20%,${t.panel})!important;backdrop-filter:blur(16px)!important;-webkit-backdrop-filter:blur(16px)!important;border:1px solid color-mix(in srgb,${t.accent} 35%,transparent)!important;box-shadow:0 2px 10px rgba(0,0,0,0.2)!important}
+        body[data-aw-theme] .agy-sidebar-row.bg-sidebar-secondary,body[data-aw-theme] .agy-sidebar-row[data-active="true"]{background-color:color-mix(in srgb,${t.accent} 22%,${t.panel})!important;border:1px solid color-mix(in srgb,${t.accent} 35%,transparent)!important;box-shadow:0 2px 8px rgba(0,0,0,0.18)!important}
         body[data-aw-theme] :is(.agy-sidebar-row,[data-testid="conversation-row-history"]) .agy-row-actions::before{display:none!important;background:transparent!important}
         body[data-aw-theme] :is(.agy-sidebar-row,[data-testid="conversation-row-history"]) .agy-row-actions{background:transparent!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;right:6px!important;gap:2px!important}
         body[data-aw-theme] .agy-row-actions button{border-radius:6px!important;background:transparent!important;transition:background .12s ease,color .12s ease}
         body[data-aw-theme] .agy-row-actions button:hover{background:color-mix(in srgb,${t.fg} 14%,transparent)!important;color:${t.fg}!important}
         body[data-aw-theme] .agy-sidebar-row:hover > div:nth-child(2),body[data-aw-theme] .agy-sidebar-row.bg-sidebar-secondary > div:nth-child(2),body[data-aw-theme] .agy-sidebar-row[data-active="true"] > div:nth-child(2){padding-right:76px!important;transition:padding-right .15s ease-out}
-        body[data-aw-theme] .surface-opaque,body[data-aw-theme] .border-menu-border,body[data-aw-theme] [role="menu"],body[data-aw-theme] [data-radix-menu-content]{background-color:color-mix(in srgb,${t.panel} 88%,transparent)!important;backdrop-filter:blur(24px)!important;-webkit-backdrop-filter:blur(24px)!important;border:1px solid color-mix(in srgb,${t.border} 45%,transparent)!important;box-shadow:0 12px 36px rgba(0,0,0,0.45)!important;border-radius:8px!important}
+        body[data-aw-theme] .surface-opaque,body[data-aw-theme] .border-menu-border,body[data-aw-theme] [role="menu"],body[data-aw-theme] [data-radix-menu-content]{background-color:color-mix(in srgb,${t.panel} 92%,transparent)!important;backdrop-filter:blur(12px)!important;-webkit-backdrop-filter:blur(12px)!important;border:1px solid color-mix(in srgb,${t.border} 45%,transparent)!important;box-shadow:0 12px 36px rgba(0,0,0,0.45)!important;border-radius:8px!important}
         body[data-aw-theme] .agy-sheet [class*="pt-[30vh]"]{padding-top:0!important;justify-content:flex-end!important;padding-bottom:24px!important}
-        body[data-aw-theme] .surface-composer{background:color-mix(in srgb,${t.border} 35%,transparent)!important;border:1px solid color-mix(in srgb,${t.border} 50%,transparent)!important;box-shadow:0 10px 32px rgba(0,0,0,0.25),0 0 0 1px color-mix(in srgb,${t.accent} 20%,transparent)!important;backdrop-filter:blur(16px)!important;-webkit-backdrop-filter:blur(16px)!important;color:var(--foreground);text-shadow:none}
+        body[data-aw-theme] .surface-composer{background:color-mix(in srgb,${t.border} 40%,transparent)!important;border:1px solid color-mix(in srgb,${t.border} 50%,transparent)!important;box-shadow:0 8px 24px rgba(0,0,0,0.22),0 0 0 1px color-mix(in srgb,${t.accent} 20%,transparent)!important;backdrop-filter:blur(8px)!important;-webkit-backdrop-filter:blur(8px)!important;color:var(--foreground);text-shadow:none}
         body[data-aw-theme] .surface-composer-card{background:color-mix(in srgb,${t.card} 85%,transparent)!important;box-shadow:none!important}
         body[data-aw-theme] .md-sticky-message-bleed,body[data-aw-theme] .md-sticky-message-bleed::before,body[data-aw-theme] .md-sticky-message-bleed::after{background:transparent!important}
         body[data-aw-theme] .agy-sheet [class*=bottom-0][class*=pointer-events-none]{background-image:none!important}
@@ -506,24 +506,24 @@
         body[data-aw-theme] .agy-sheet{isolation:isolate;background:transparent!important;background-color:transparent!important}
         body[data-aw-theme] .bg-sidebar{background:transparent!important;background-color:transparent!important}
         body[data-aw-theme] .bg-sidebar.sticky,body[data-aw-theme] .bg-sidebar [class*="sticky"],body[data-aw-theme] [aria-label="Sidebar"] [class*="sticky"],body[data-aw-theme] [data-aw-sticky="1"]{background-color:color-mix(in srgb,${t.panel} 97%,transparent)!important;z-index:20!important}
-        body[data-aw-theme] .agy-inset-shell > div:first-child > div:first-child,body[data-aw-theme] [aria-label="Sidebar"],body[data-aw-theme] nav.bg-sidebar{background-color:color-mix(in srgb,${t.chrome} 30%,transparent)!important;backdrop-filter:blur(10px)!important;-webkit-backdrop-filter:blur(10px)!important;border-right:1px solid color-mix(in srgb,${t.border} 30%,rgba(255,255,255,0.08))!important}
-        body[data-aw-theme] .agy-shell > .shrink-0{position:relative!important;z-index:30!important;background-color:color-mix(in srgb,${t.chrome} 30%,transparent)!important;backdrop-filter:blur(10px)!important;-webkit-backdrop-filter:blur(10px)!important;border-bottom:0!important}
+        body[data-aw-theme] .agy-inset-shell > div:first-child > div:first-child,body[data-aw-theme] [aria-label="Sidebar"],body[data-aw-theme] nav.bg-sidebar{background-color:color-mix(in srgb,${t.chrome} 36%,transparent)!important;backdrop-filter:blur(6px)!important;-webkit-backdrop-filter:blur(6px)!important;border-right:1px solid color-mix(in srgb,${t.border} 30%,rgba(255,255,255,0.08))!important}
+        body[data-aw-theme] .agy-shell > .shrink-0{position:relative!important;z-index:30!important;background-color:color-mix(in srgb,${t.chrome} 36%,transparent)!important;backdrop-filter:blur(6px)!important;-webkit-backdrop-filter:blur(6px)!important;border-bottom:0!important}
         body[data-aw-theme] .agy-sidebar-row{--row-bg:transparent!important}
         body[data-aw-theme] .agy-sidebar-row:hover:not(.bg-sidebar-secondary){background-color:color-mix(in srgb,${t.fg} 7%,transparent)!important}
-        body[data-aw-theme] .agy-sidebar-row.bg-sidebar-secondary,body[data-aw-theme] .agy-sidebar-row[data-active="true"]{background-color:color-mix(in srgb,${t.accent} 20%,${t.panel})!important;backdrop-filter:blur(16px)!important;-webkit-backdrop-filter:blur(16px)!important;border:1px solid color-mix(in srgb,${t.accent} 35%,transparent)!important;box-shadow:0 2px 10px rgba(0,0,0,0.2)!important}
+        body[data-aw-theme] .agy-sidebar-row.bg-sidebar-secondary,body[data-aw-theme] .agy-sidebar-row[data-active="true"]{background-color:color-mix(in srgb,${t.accent} 22%,${t.panel})!important;border:1px solid color-mix(in srgb,${t.accent} 35%,transparent)!important;box-shadow:0 2px 8px rgba(0,0,0,0.18)!important}
         body[data-aw-theme] :is(.agy-sidebar-row,[data-testid="conversation-row-history"]) .agy-row-actions::before{display:none!important;background:transparent!important}
         body[data-aw-theme] :is(.agy-sidebar-row,[data-testid="conversation-row-history"]) .agy-row-actions{background:transparent!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;right:6px!important;gap:2px!important}
         body[data-aw-theme] .agy-row-actions button{border-radius:6px!important;background:transparent!important;transition:background .12s ease,color .12s ease}
         body[data-aw-theme] .agy-row-actions button:hover{background:color-mix(in srgb,${t.fg} 14%,transparent)!important;color:${t.fg}!important}
         body[data-aw-theme] .agy-sidebar-row:hover > div:nth-child(2),body[data-aw-theme] .agy-sidebar-row.bg-sidebar-secondary > div:nth-child(2),body[data-aw-theme] .agy-sidebar-row[data-active="true"] > div:nth-child(2){padding-right:76px!important;transition:padding-right .15s ease-out}
-        body[data-aw-theme] .surface-opaque,body[data-aw-theme] .border-menu-border,body[data-aw-theme] [role="menu"],body[data-aw-theme] [data-radix-menu-content]{background-color:color-mix(in srgb,${t.panel} 88%,transparent)!important;backdrop-filter:blur(24px)!important;-webkit-backdrop-filter:blur(24px)!important;border:1px solid color-mix(in srgb,${t.border} 45%,transparent)!important;box-shadow:0 12px 36px rgba(0,0,0,0.45)!important;border-radius:8px!important}
+        body[data-aw-theme] .surface-opaque,body[data-aw-theme] .border-menu-border,body[data-aw-theme] [role="menu"],body[data-aw-theme] [data-radix-menu-content]{background-color:color-mix(in srgb,${t.panel} 92%,transparent)!important;backdrop-filter:blur(12px)!important;-webkit-backdrop-filter:blur(12px)!important;border:1px solid color-mix(in srgb,${t.border} 45%,transparent)!important;box-shadow:0 12px 36px rgba(0,0,0,0.45)!important;border-radius:8px!important}
         body[data-aw-theme] .agy-sheet [class*="pt-[30vh]"]{padding-top:0!important;justify-content:flex-end!important;padding-bottom:24px!important}
         @media(max-width:900px){body[data-aw-theme] .agy-shell{--max-conversation-width:100%!important}}
-        body[data-aw-theme] .agy-sheet{text-shadow:0 0 2px ${t.light?t.floor:t.sky},0 0 6px ${t.light?t.floor:t.sky},0 0 12px ${t.light?t.floor:t.sky}}body[data-aw-theme] .surface-composer{text-shadow:none}body[data-aw-theme] .agy-user-bubble{color:var(--foreground);text-shadow:none}
+        body[data-aw-theme] .agy-sheet{text-shadow:0 1px 4px ${t.light?t.floor:t.sky}}body[data-aw-theme] .surface-composer{text-shadow:none}body[data-aw-theme] .agy-user-bubble{color:var(--foreground);text-shadow:none}
         body[data-aw-theme] .md-sticky-message-bleed,body[data-aw-theme] .md-sticky-message-bleed::before,body[data-aw-theme] .md-sticky-message-bleed::after{background:transparent!important}
         body[data-aw-theme] .agy-sheet [class*=bottom-0][class*=pointer-events-none]{background-image:none!important}
         body[data-aw-theme] .agy-sheet[data-sheet-inset] [data-main-content-body],body[data-aw-theme] .agy-inset-shell [data-side-panel-body]{background-color:transparent!important}
-        body[data-aw-theme] .surface-composer{background:color-mix(in srgb,${t.border} 35%,transparent)!important;border:1px solid color-mix(in srgb,${t.border} 50%,transparent)!important;box-shadow:0 10px 32px rgba(0,0,0,0.25),0 0 0 1px color-mix(in srgb,${t.accent} 20%,transparent)!important;backdrop-filter:blur(16px)!important;-webkit-backdrop-filter:blur(16px)!important}
+        body[data-aw-theme] .surface-composer{background:color-mix(in srgb,${t.border} 40%,transparent)!important;border:1px solid color-mix(in srgb,${t.border} 50%,transparent)!important;box-shadow:0 8px 24px rgba(0,0,0,0.22),0 0 0 1px color-mix(in srgb,${t.accent} 20%,transparent)!important;backdrop-filter:blur(8px)!important;-webkit-backdrop-filter:blur(8px)!important}
         body[data-aw-theme] .surface-composer-card{background:color-mix(in srgb,${t.card} 85%,transparent)!important;box-shadow:none!important}
         body[data-aw-theme] ::selection{background:${t.light?'#72b5d34d':'#a4bbe645'}}
         body[data-aw-theme] ::-webkit-scrollbar-thumb{background:color-mix(in srgb,${t.muted} 45%,transparent);border-radius:8px}body[data-aw-theme] input,body[data-aw-theme] textarea,body[data-aw-theme] [contenteditable=true]{caret-color:${t.fg}}
@@ -554,7 +554,7 @@
     if(shell!==target||!canvas?.isConnected){needsPosSync=true;needsStickySync=true;resizeObserver?.disconnect();cancelAnimationFrame(resizeRaf);resizeRaf=0;canvas?.remove();shell=target;sampleChrome();canvas=make('canvas',{id:'agy-ascii-scene','aria-hidden':'true'});Object.assign(canvas.style,{position:'absolute',inset:'0',width:'100%',height:'100%',zIndex:'-1',pointerEvents:'none'});shell.prepend(canvas);ctx=canvas.getContext('2d',{alpha:false});resizeObserver=new ResizeObserver(()=>{if(!resizeRaf)resizeRaf=requestAnimationFrame(()=>{resizeRaf=0;if(!alive)return;resize();syncLayout(true);render();});});resizeObserver.observe(shell);resize();apply();}
     else{if(needsModeSync&&prefs.theme!=='off'&&prefs.recolor)setMode(current(),false);else needsModeSync=false;syncLayout();}
   }
-  function resize(){const target=shell||sheet;if(!target)return;const r=target.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,1.5);sceneWidth=r.width;sceneHeight=r.height;canvas.width=Math.round(r.width*d);canvas.height=Math.round(r.height*d);ctx.setTransform(d,0,0,d,0,0);}
+  function resize(){const target=shell||sheet;if(!target)return;const r=target.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,1.25);sceneWidth=r.width;sceneHeight=r.height;canvas.width=Math.round(r.width*d);canvas.height=Math.round(r.height*d);ctx.setTransform(d,0,0,d,0,0);}
   function render(){if(ctx&&canvas&&!canvas.hidden){drawAsciiScene(ctx,sceneWidth,sceneHeight,current(),time,.35+.65*prefs.intensity/100,calmBox,{energy,pulse,glyphs:prefs.glyphs,scale:prefs.scale});}}
   function stopPreviews(){cancelAnimationFrame(previewRaf);previewRaf=0;}
   function drawPreview(c,t){drawAsciiScene(c.getContext('2d'),c.width,c.height,t,time,1,null,{glyphs:prefs.glyphs});c.dataset.previewKey=prefs.glyphs;}
@@ -580,7 +580,7 @@
   function schedule(){cancelAnimationFrame(raf);raf=0;last=performance.now();if(alive&&!suspended&&!document.hidden&&!prefs.paused&&prefs.theme!=='off')raf=requestAnimationFrame(tick);}
   function tick(now){
     if(!alive||suspended)return;
-    if(now-last>=33){
+    if(now-last>=50){
       const dt=Math.min((now-last)/1000,.1);last=now;
       // Ease into and out of the working state so a quick tool call never makes the scene lurch.
       const target=prefs.reactive&&agents>0?1:0;energy+=(target-energy)*Math.min(1,dt*(target?1.2:.6));if(energy<.002)energy=0;
@@ -615,18 +615,20 @@
     observer=new MutationObserver(records=>{
       const topBar=document.querySelector('.agy-shell > .shrink-0');
       const sb=document.querySelector('nav.bg-sidebar, [aria-label="Sidebar"], .agy-inset-shell > div:first-child > div:first-child');
+      let shouldMount=!shell?.isConnected||!canvas?.isConnected;
       for(const r of records){
         if(needsModeSync&&needsPosSync&&needsStickySync)break;
         if(!r.addedNodes?.length)continue;
         for(const n of r.addedNodes){
           if(n.nodeType!==1)continue;
-          needsModeSync=true;
+          const cls=typeof n.className==='string'?n.className:'';
+          if(cls.includes('dark')||cls.includes('light')||n.querySelector?.('.dark,.light'))needsModeSync=true;
           if(!topBar||!topBar.isConnected||topBar.contains(n)||n.contains?.(topBar))needsPosSync=true;
           if(!sb||!sb.isConnected||sb.contains(n)||n.contains?.(sb))needsStickySync=true;
           if(needsModeSync&&needsPosSync&&needsStickySync)break;
         }
       }
-      if(!layoutTimer)layoutTimer=setTimeout(()=>{layoutTimer=0;mount();},120);
+      if((shouldMount||needsModeSync||needsPosSync||needsStickySync)&&!layoutTimer)layoutTimer=setTimeout(()=>{layoutTimer=0;mount();},160);
     });observer.observe(document.getElementById('root')||document.body,{childList:true,subtree:true});
     loadQuota();quotaTimer=setInterval(loadQuota,60000);
     listen(window,'resize',()=>{needsPosSync=true;syncLayout();});listen(document,'visibilitychange',()=>{if(document.hidden)stopPreviews();else{needsPosSync=true;render();syncLayout();loadQuota();if(open)previews(true);}schedule();});listen(reduced,'change',()=>{if(reduced.matches){prefs.paused=true;apply();save();}});
