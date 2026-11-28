@@ -1,6 +1,6 @@
 {
   "name": "custom-antigravity",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "type": "module",
   "description": "Custom JetBrains Mono font, GPU-accelerated smooth caret & expand blink animation for Antigravity 2.0",
