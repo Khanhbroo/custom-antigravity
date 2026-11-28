@@ -5,8 +5,11 @@
   "type": "module",
   "description": "Custom JetBrains Mono font, GPU-accelerated smooth caret & expand blink animation for Antigravity 2.0",
   "scripts": {
-    "apply": "node patch_font.mjs",
-    "revert": "node patch_font.mjs revert"
+    "apply": "node apply-all.mjs",
+    "apply:font": "node patch_font.mjs",
+    "revert": "node apply-all.mjs revert",
+    "status": "node ascii-wallpapers/manage-wallpapers.cjs status",
+    "verify": "node ascii-wallpapers/manage-wallpapers.cjs verify"
   },
   "dependencies": {
     "@electron/asar": "^3.2.18"
