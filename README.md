@@ -13,6 +13,18 @@
 
 ---
 
+## 🖼️ Preview
+
+![Custom Antigravity 2.0 - Live ASCII Theme Picker](./assets/picker.jpg)
+
+| Aurora | Ember Dunes | Koi Pond |
+| :---: | :---: | :---: |
+| ![Aurora](./assets/aurora.jpg) | ![Ember Dunes](./assets/dunes.jpg) | ![Koi Pond](./assets/koi.jpg) |
+| **Sakura** | **Night Rain** | **Retro Sunset** |
+| ![Sakura](./assets/sakura.jpg) | ![Night Rain](./assets/rain.jpg) | ![Retro Sunset](./assets/retro.jpg) |
+
+---
+
 ## 🌟 Features
 
 | Module | What You Get |
